@@ -7,7 +7,7 @@ namespace Basket.API.Repositories
     public class BasketRepository : IBasketRepository
     {
         private readonly IDistributedCache _cache;
-
+        
         public BasketRepository(IDistributedCache cache)
         {
             _cache = cache;
