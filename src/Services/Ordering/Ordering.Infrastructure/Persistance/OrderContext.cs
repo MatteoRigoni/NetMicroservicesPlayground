@@ -28,8 +28,10 @@ namespace Ordering.Infrastructure.Persistance
                         entry.Entity.LastModifiedDate = DateTime.Now;
                         break;
                     case EntityState.Added:
-                        entry.Entity.CreatedBy = "user";
+                        entry.Entity.CreatedBy = entry.Entity.LastModifiedBy = "user";
                         entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.LastModifiedDate = DateTime.Now;
+
                         break;
                     default:
                         break;
