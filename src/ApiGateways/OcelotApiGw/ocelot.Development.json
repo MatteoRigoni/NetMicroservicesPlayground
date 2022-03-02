@@ -50,6 +50,10 @@
       ],
       "UpstreamPathTemplate": "/Basket/{userName}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      //"“AuthenticationOptions”": {
+      //  "“AuthenticationProviderKey”": "“IdentityApiKey”",
+      //  "“AllowedScopes”": []
+      //}
     },
     {
       "DownstreamPathTemplate": "/api/v1/Basket",

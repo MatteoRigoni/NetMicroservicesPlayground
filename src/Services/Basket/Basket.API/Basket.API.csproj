@@ -16,6 +16,7 @@
     <PackageReference Include="masstransit" Version="7.3.1" />
     <PackageReference Include="masstransit.aspnetcore" Version="7.3.1" />
     <PackageReference Include="masstransit.rabbitmq" Version="7.3.1" />
+    <PackageReference Include="microsoft.aspnetcore.authentication.jwtbearer" Version="6.0.2" />
     <PackageReference Include="Microsoft.Extensions.CAching.StackExchangeRedis" Version="6.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

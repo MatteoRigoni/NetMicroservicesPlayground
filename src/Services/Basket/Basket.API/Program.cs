@@ -2,10 +2,23 @@ using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using DIscount.Grpc.Protos;
 using MassTransit;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//IdentityModelEventSource.ShowPII = true;
+
+//builder.Services.AddAuthentication("Bearer")
+//.AddJwtBearer("Bearer", options =>
+//{
+//    options.Authority = "https://localhost:5006";
+//     options.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateAudience = false
+//    };
+});
 
 builder.Services.AddControllers();
 
@@ -41,6 +54,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

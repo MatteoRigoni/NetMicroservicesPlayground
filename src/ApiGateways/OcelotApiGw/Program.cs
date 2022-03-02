@@ -1,8 +1,21 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Cache.CacheManager;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var authenticationProviderKey = "IdentityApiKey";
+builder.Services.AddAuthentication()
+ .AddJwtBearer(authenticationProviderKey, x =>
+ {
+     x.Authority = "https://localhost:5006"; // IDENTITY SERVER URL
+                          //x.RequireHttpsMetadata = false;
+     x.TokenValidationParameters = new TokenValidationParameters
+     {
+         ValidateAudience = false
+     };
+ });
 
 builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", true, true);
 
